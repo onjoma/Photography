@@ -1,2 +1,2 @@
 # Photography
-HTML photography template to showcase your photography work.
+HTML photography template to showcase your work.
