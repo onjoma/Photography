@@ -1,0 +1,204 @@
+/* About Page Styles */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.bio-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin: 60px 0;
+}
+
+@media (max-width: 768px) {
+    .bio-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+.bio-image {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.bio-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.bio-image:hover img {
+    transform: scale(1.05);
+}
+
+.bio-content {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.bio-intro {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.bio-name {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.bio-title {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.bio-description {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #2a2a2a;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.bio-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.bio-specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.specialty-tag {
+    padding: 4px 12px;
+    background: #f0f0f0;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    color: #2a2a2a;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.specialty-tag:hover {
+    background: #333;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.bio-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-link {
+    color: #333;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link i {
+    font-size: 1.2rem;
+}
+
+.social-link:hover {
+    color: #000;
+    transform: translateY(-2px);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.cta-button:hover {
+    background: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bio-content > * {
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.bio-content > *:nth-child(1) { animation-delay: 0.1s; }
+.bio-content > *:nth-child(2) { animation-delay: 0.2s; }
+.bio-content > *:nth-child(3) { animation-delay: 0.3s; }
+.bio-content > *:nth-child(4) { animation-delay: 0.4s; }
+.bio-content > *:nth-child(5) { animation-delay: 0.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+    .bio-content > * {
+        animation: none;
+        opacity: 1;
+    }
+}
