@@ -1,5 +1,9 @@
 :root {
   --font-family: "Dosis", sans-serif;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-dark: #333;
+  --color-overlay: rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -8,7 +12,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: var(--color-white);
 }
 
 a:hover {
@@ -28,10 +32,12 @@ a:hover {
 .navbar-brand:hover {
   text-decoration: none;
 }
+
 .bi {
   font-size: 1.5rem;
   margin-right: 0.5rem;
 }
+
 #hero {
   background: url("/images/hero-img-1.jpg") no-repeat center center / cover;
   height: 100vh;
@@ -47,7 +53,7 @@ a:hover {
 }
 
 #hero-single-gallery {
-  background: #333;
+  background: var(--color-dark);
 }
 
 .hero-content {
@@ -56,11 +62,11 @@ a:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #fff;
+  color: var(--color-white);
   width: 90%;
   max-width: 800px;
   padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--color-overlay);
   border-radius: 8px;
 }
 
@@ -78,16 +84,16 @@ a:hover {
 .cta-button {
   display: inline-block;
   padding: 1rem 2rem;
-  background-color: #fff;
-  color: #333;
+  background-color: var(--color-white);
+  color: var(--color-dark);
   border-radius: 30px;
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--color-dark);
+  color: var(--color-white);
   text-decoration: none;
   transform: translateY(-2px);
 }
@@ -102,19 +108,21 @@ a:hover {
   top: 30%;
   left: 30%;
   right: 30%;
-  color: #fff;
+  color: var(--color-white);
   text-align: center;
   line-height: 2em;
-  background: #333;
+  background: var(--color-dark);
   opacity: 0.8;
   border-radius: 5px;
   padding: 1rem;
 }
+
 .contact-info .social .bi {
   font-size: 2rem;
 }
+
 .contact-info .social a {
-  color: #fff;
+  color: var(--color-white);
 }
 
 /* Gallery */
@@ -125,7 +133,7 @@ a:hover {
 
 .gallery,
 .about h1 {
-  color: #fff;
+  color: var(--color-white);
   text-align: center;
   padding: 2rem 0.5rem;
 }
@@ -137,16 +145,16 @@ a:hover {
   text-align: center;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .gallery-categories a {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .gallery-categories .gallery-category .cat-image {
   width: 100%;
-  border: 2px solid #fff;
+  border: 2px solid var(--color-white);
   border-radius: 5px;
 }
 
@@ -166,23 +174,23 @@ a:hover {
 
 .about-bio {
   font-size: 1.1rem;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .about-bio p {
-  background: #000;
+  background: var(--color-black);
   padding: 0.5rem;
   border-radius: 5px;
 }
 
 .btn {
-  background: #333;
-  color: #fff;
+  background: var(--color-dark);
+  color: var(--color-white);
   font-size: 1.4rem;
 }
 
 .btn:hover {
-  color: #fff;
+  color: var(--color-white);
   text-decoration: underline 1px solid;
   text-underline-offset: 2px;
 }
@@ -191,6 +199,7 @@ a:hover {
 .gallery h1 {
   padding: 1.5rem 0.5rem;
 }
+
 .gallery-single-category {
   column-count: 3;
   column-gap: 3px;
@@ -210,9 +219,9 @@ a:hover {
 
 /* Footer */
 #footer {
-  color: #fff;
+  color: var(--color-white);
   position: fixed;
-  background: #000;
+  background: var(--color-black);
   bottom: 0;
   display: flex;
   align-items: center;
@@ -239,7 +248,7 @@ a:hover {
   }
 
   body {
-    background: #333;
+    background: var(--color-dark);
   }
 
   #hero-page {
@@ -253,6 +262,6 @@ a:hover {
   .gallery-single-category img {
     filter: none;
     margin-bottom: 10px;
-    border: 2px solid #fff;
+    border: 2px solid var(--color-white);
   }
 }
