@@ -1,0 +1,113 @@
+.testimonials-container {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.testimonial-card {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: -100%;
+    right: 0;
+    opacity: 0;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card.active {
+    animation: slideUp 1s forwards, slideDown 1s forwards 9s;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.testimonial-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: var(--spacing-sm);
+}
+
+.testimonial-avatar i {
+    font-size: 1.8rem;
+    color: #666;
+}
+
+.client-info {
+    flex: 1;
+}
+
+.client-info h4 {
+    font-size: var(--font-size-sm);
+    color: var(--color-dark);
+    margin: 0;
+    font-weight: 600;
+}
+
+.client-info p {
+    font-size: var(--font-size-xs);
+    color: #666;
+    margin: 2px 0 0 0;
+}
+
+.testimonial-content {
+    position: relative;
+    padding-left: var(--spacing-sm);
+}
+
+.testimonial-content::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -5px;
+    font-size: var(--font-size-xl);
+    color: #ccc;
+    font-family: Georgia, serif;
+}
+
+.testimonial-content p {
+    font-size: var(--font-size-sm);
+    color: var(--color-dark);
+    line-height: 1.5;
+    margin: 0;
+}
+
+@keyframes slideUp {
+    0% {
+        bottom: -100%;
+        opacity: 0;
+    }
+    100% {
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        bottom: 0;
+        opacity: 1;
+    }
+    100% {
+        bottom: -100%;
+        opacity: 0;
+    }
+}
+
+/* Add pause on hover */
+.testimonial-card:hover {
+    animation-play-state: paused;
+}

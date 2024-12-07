@@ -22,14 +22,18 @@
   <meta name="twitter:image:alt" content="Q-Photography Homepage Hero Image">
   
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Bootsrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <!-- Bootsrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/style.css">
-  <title>Q-Photography | Professional Photography Services</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Add Font Awesome and testimonials CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="css/testimonials.css">
+  <title>Q-Photography</title>
 </head>
 <body>
 
@@ -68,15 +72,48 @@
     </div>
   </div>
   
-  <!-- Footer -->
-  <div id="footer" role="contentinfo" aria-label="Footer">
-    <p>Q-Photos - &COPY; <span id="copyright-year"></span></p>
-    <p><a href="http://unsplash.com/" target="_blank" aria-label="Visit Unsplash for image credits" rel="noopener">unsplash images</a></p>
-  </div>
+  <!-- Include footer content -->
+  <div id="footer-container"></div>
 
-  <!-- Bootsrap JS -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
   <script src="js/common.js"></script>
+  <script>
+    // Load footer content
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+            // Initialize testimonials after footer is loaded
+            const testimonials = document.querySelectorAll('.testimonial-card');
+            console.log('Found testimonials:', testimonials.length);
+            
+            if (testimonials.length > 0) {
+                let currentIndex = 0;
+
+                function showNextTestimonial() {
+                    console.log('Showing testimonial:', currentIndex);
+                    
+                    // Remove active class from all testimonials
+                    testimonials.forEach(card => {
+                        card.classList.remove('active');
+                    });
+
+                    // Add active class to current testimonial
+                    testimonials[currentIndex].classList.add('active');
+
+                    // Update index for next testimonial
+                    currentIndex = (currentIndex + 1) % testimonials.length;
+
+                    // Wait for current animation to complete (10s) before showing next
+                    setTimeout(showNextTestimonial, 10000);
+                }
+
+                // Start the testimonial rotation
+                showNextTestimonial();
+            }
+        });
+  </script>
 </body>
 </html>
