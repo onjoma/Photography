@@ -24,14 +24,16 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Bootsrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
   <!-- Bootsrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <!-- LightBox -->
     <link rel="stylesheet" href="includes/lightbox/css/lightbox.min.css">
   <link rel="stylesheet" href="/css/style.css">
-  <title>Gallery | Q-Photography</title>
+  <link rel="stylesheet" href="/css/filters.css">
+  <link rel="stylesheet" href="/css/masonry.css">
+  <title>Gallery - Q-Photography</title>
 </head>
 <body>
 <div class="main-container">
@@ -64,21 +66,55 @@
       <div class="gallery" role="main">
         <h1>My Gallery</h1>
 
+        <div class="filter-container" role="region" aria-label="Gallery filters">
+          <select class="filter-select" data-filter="style" aria-label="Filter by style">
+            <option value="">All Styles</option>
+            <option value="portrait">Portrait</option>
+            <option value="candid">Candid</option>
+            <option value="landscape">Landscape</option>
+            <option value="artistic">Artistic</option>
+          </select>
+
+          <select class="filter-select" data-filter="setting" aria-label="Filter by setting">
+            <option value="">All Settings</option>
+            <option value="indoor">Indoor</option>
+            <option value="outdoor">Outdoor</option>
+            <option value="studio">Studio</option>
+          </select>
+
+          <div class="tag-container" role="group" aria-label="Filter tags">
+            <button class="tag" data-tag="black-and-white">Black & White</button>
+            <button class="tag" data-tag="color">Color</button>
+            <button class="tag" data-tag="natural-light">Natural Light</button>
+            <button class="tag" data-tag="flash">Flash</button>
+          </div>
+
+          <button class="clear-filters" aria-label="Clear all filters">Clear Filters</button>
+          <span class="filter-count" aria-live="polite"></span>
+        </div>
+
         <div class="gallery-categories" role="region" aria-label="Photography categories">
-          <div class="gallery-category">
-            <img class="cat-image" src="images/fashion.jpg" alt="Fashion photography sample showing a professional model photoshoot" loading="lazy">
+          <div class="gallery-category" data-category="fashion">
+            <img class="cat-image" src="images/fashion.jpg" alt="Fashion photography sample showing a professional model photoshoot" loading="lazy"
+                 data-style="portrait" data-setting="studio" data-tags="color,artistic,professional">
             <h3><a href="fashion.html" aria-label="View fashion photography portfolio">Fashion</a></h3>
           </div>
-          <div class="gallery-category">
-            <img class="cat-image" src="images/wedding.jpg" alt="Wedding photography sample showing a happy couple on their special day" loading="lazy">
+          
+          <div class="gallery-category" data-category="wedding">
+            <img class="cat-image" src="images/wedding.jpg" alt="Wedding photography sample showing a happy couple on their special day" loading="lazy"
+                 data-style="candid" data-setting="outdoor" data-tags="color,natural-light">
             <h3><a href="wedding.html" aria-label="View wedding photography portfolio">Wedding</a></h3>
           </div>
-          <div class="gallery-category">
-            <img class="cat-image" src="images/birthday-party.jpg" alt="Party photography sample showing celebration moments" loading="lazy">
+          
+          <div class="gallery-category" data-category="party">
+            <img class="cat-image" src="images/birthday-party.jpg" alt="Party photography sample showing celebration moments" loading="lazy"
+                 data-style="candid" data-setting="indoor" data-tags="color,flash">
             <h3><a href="party.html" aria-label="View party and event photography portfolio">Party's</a></h3>
           </div>
-          <div class="gallery-category">
-            <img class="cat-image" src="images/nature.jpg" alt="Nature photography sample showing beautiful landscape" loading="lazy">
+          
+          <div class="gallery-category" data-category="nature">
+            <img class="cat-image" src="images/nature.jpg" alt="Nature photography sample showing beautiful landscape" loading="lazy"
+                 data-style="landscape" data-setting="outdoor" data-tags="color,natural-light">
             <h3><a href="nature.html" aria-label="View nature photography portfolio">Nature</a></h3>
           </div>
         </div>
@@ -95,5 +131,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
   <script src="js/common.js"></script>
+  <script src="js/filters.js"></script>
 </body>
 </html>
