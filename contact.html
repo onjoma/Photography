@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Q-Photography for professional photography services. Book a session, inquire about our services, or follow us on social media for our latest work and updates.">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Bootsrap Icons -->
@@ -18,39 +19,39 @@
 
   <div id="hero-page">
     <div class="main-container">
-      <nav class="navbar navbar-expand-lg navbar-dark text-uppercase">
+      <nav class="navbar navbar-expand-lg navbar-dark text-uppercase" aria-label="Main navigation">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"> <i class="bi bi-camera"></i> Q-Photography</a>
+          <a class="navbar-brand" href="index.html" aria-label="Q-Photography Home"> <i class="bi bi-camera" aria-hidden="true"></i> Q-Photography</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+            <ul class="navbar-nav ms-auto" role="menubar">
+              <li class="nav-item" role="none">
+                <a class="nav-link" href="index.html" role="menuitem">Home</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="gallery.html">Gallery</a>
+              <li class="nav-item" role="none">
+                <a class="nav-link" href="gallery.html" role="menuitem">Gallery</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
+              <li class="nav-item" role="none">
+                <a class="nav-link" href="about.html" role="menuitem">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+              <li class="nav-item" role="none">
+                <a class="nav-link active" aria-current="page" href="contact.html" role="menuitem">Contact</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <div class="contact-info">
+      <div class="contact-info" role="main" aria-label="Contact information">
         <h1>Get In Touch</h1>
-        <p>Email: hire@qphotography.com</p>
+        <p>Email: <a href="mailto:hire@qphotography.com" aria-label="Send email to hire@qphotography.com">hire@qphotography.com</a></p>
         <h3>Follow Me On</h3>
-        <div class="social">
-          <a href="#"><i class="bi bi-facebook"></i></a>
-          <a href="#"><i class="bi bi-twitter"></i></a>
-          <a href="#"><i class="bi bi-instagram"></i></a>
+        <div class="social" role="navigation" aria-label="Social media links">
+          <a href="#" aria-label="Follow us on Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Follow us on Twitter"><i class="bi bi-twitter" aria-hidden="true"></i></a>
+          <a href="#" aria-label="Follow us on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
         </div>
 
       </div>
@@ -58,9 +59,9 @@
     </div>
   </div>
 <!-- Footer -->
-  <div id="footer">
+  <div id="footer" role="contentinfo" aria-label="Footer">
     <p>Q-Photos - &COPY; <span id="copyright-year"></span></p>
-    <p><a href="http://unsplush.com/" target="_blank">unsplash images</a></p>
+    <p><a href="http://unsplush.com/" target="_blank" aria-label="Visit Unsplash for image credits" rel="noopener">unsplash images</a></p>
   </div>
 
 <!-- Bootsrap JS -->
